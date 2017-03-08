@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="medium-10 columns content-focus">
+
+    <!-- breadcrumbs? -->
+
+    <form action="/directory/edit-category/{{id}}/process" method="post">
+
+      <label>Category Title</label>
+      <input type="text" name="title" value="{{data.title}}" />
+
+      <label>Display Column</label>
+      <input type="text" name="display_column" value="{{data.display_column}}" />
+
+      <label>Display Order</label>
+      <input type="text" name="display_order" value="{{data.display_order}}" />
+
+      <!-- parent category -->
+
+      <!-- <label>Description</label>
+      <textarea name="description">{{data.description}}</textarea> -->
+
+      <button>Save Category</button>
+
+    </form>
+
+  </div>
+  <div class="medium-2 columns sidebar">
+    {{> ads}}
+
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="medium-10 columns content-focus">
+
+
+    <form class="search" action="/directory-search/">
+      <input type="text" name="k" value="{{keyword}}" />
+      <button>Search</button>
+    </form>
+
+
+    {{#if links_list}}
+
+    <!-- <ul class="search-results-list small-block-grid-4 medium-block-grid-4 large-block-grid-4"> -->
+    <ul class="search-results-list directory-list">
+      {{#each links_list}}
+      <li>
+        <!-- fixit admin or owner edit -->
+        <h3>{{title}} &nbsp; <small><a href="/directory/edit/{{_id}}">(edit)</a></small></h3>
+        <h4><a href="{{url}}">{{url}}</a></h4>
+        <h4>{{address}}<br />{{city}}, {{state}} &nbsp;{{zip}}</h4>
+        <h5>{{phone}}</h5>
+        <h6>{{description}}</h6>
+      </li>
+      {{/each}}
+    </ul>
+
+
+
+  {{else}}
+    <h4 class="no-results">No results found for <i>{{keyword}}</i></h4>
+  {{/if}}
+
+
+
+  </div>
+  <div class="medium-2 columns sidebar">
+
+    <a href="/directory/edit/new">Post a new directory link</a>
+
+    {{> ads}}
+
+  </div>
+</div>

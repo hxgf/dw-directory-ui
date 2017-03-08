@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="medium-10 columns content-focus">
+
+
+
+		<form action="/directory/edit/process" method="post">
+
+      <label>Business Name</label>
+      <input type="text" name="title" value="{{data.title}}" />
+
+      <label>Website Link</label>
+      <input type="text" name="url" value="{{data.url}}" />
+
+      <label>Address</label>
+      <input type="text" name="address" value="{{data.address}}" />
+
+      <label>City</label>
+      <input type="text" name="city" value="{{data.city}}" />
+
+      <label>State</label>
+      <input type="text" name="state" value="{{data.state}}" />
+
+      <label>Zip</label>
+      <input type="text" name="zip" value="{{data.zip}}" />
+
+      <label>Phone</label>
+      <input type="text" name="phone" value="{{data.phone}}" />
+
+
+      <label>Description</label> <!-- // max 500 char -->
+      <textarea name="description">{{data.description}}</textarea>
+
+      <label>Category</label> <!-- // required -->
+			<select name="category_id">
+				<option> -- Select a category -- </option>
+					{{#each categories_list}}
+					<option {{#is _id "==" ../data.category_id}}selected="selected"{{/is}} value="{{_id}}">{{title}}</option>
+					{{/each}}
+
+			</select>
+
+		<!-- <a href="/contact">Suggest a new category</a> -->
+
+    <input type="hidden" name="id" value="{{id}}" />
+    <button>Save</button> <!-- fixit delete -->
+
+
+  </div>
+  <div class="medium-2 columns sidebar">
+    {{> ads}}
+
+  </div>
+</div>

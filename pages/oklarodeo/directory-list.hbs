@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="medium-10 columns content-focus">
+
+
+    <!-- breadcrumbs -->
+
+    <form class="search" action="/directory-search/">
+      <input type="text" name="k" value="{{keyword}}" />
+      <button>Search</button>
+    </form>
+
+    <h2>{{data.title}}</h2>
+
+    {{#if links_list}}
+
+    <!-- <ul class="search-results-list small-block-grid-4 medium-block-grid-4 large-block-grid-4"> -->
+    <ul class="search-results-list directory-list">
+    {{#each links_list}}
+      <li>
+        <!-- fixit admin or owner edit -->
+        <h3>{{title}} &nbsp; <small><a href="/directory/edit/{{_id}}">(edit)</a></small></h3>
+        <h4><a href="{{url}}">{{url}}</a></h4>
+        <h4>{{address}}<br />{{city}}, {{state}} &nbsp;{{zip}}</h4>
+        <h5>{{phone}}</h5>
+        <h6>{{description}}</h6>
+      </li>
+    {{/each}}
+    </ul>
+
+    <!-- <div class="pagination">
+    {{#if paginate.previous}}<a href="/calendar/{{paginate.previous_query}}">&larr; Previous page</a>{{/if}}
+    {{#if paginate.next}}<a href="/calendar/{{paginate.next_query}}">Next page &rarr;</a>{{/if}}
+    </div> -->
+
+
+    {{else}}
+    <h4 class="no-results">This category is empty.</h4>
+    <h4 class="no-results">Be the first <a href="/directory/edit/new">to post your link.</a></h4>
+    {{/if}}
+
+
+
+  </div>
+  <div class="medium-2 columns sidebar">
+
+    <a href="/directory/edit/new">Post a new directory link</a>
+
+    {{> ads}}
+
+  </div>
+</div>

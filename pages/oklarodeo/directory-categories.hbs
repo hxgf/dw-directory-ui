@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="medium-10 columns content-focus">
+
+
+
+
+    <!-- breadcrumbs -->
+
+
+    <form class="search" action="/directory-search/">
+      <input type="text" name="k" value="{{keyword}}" />
+      <button>Search</button>
+    </form>
+
+
+
+
+
+    {{#if global.admin_token}}<a href="/directory/edit-category/new">New category</a>{{/if}}
+
+
+    <ul class="directory-categories">
+      {{#directory_home_left}}
+        <li><a href="/directory/{{slug}}">{{title}}</a> <span>({{links_total}})</span></li>
+      {{/directory_home_left}}
+    </ul>
+
+    <ul class="directory-categories">
+      {{#directory_home_right}}
+        <li><a href="/directory/{{slug}}">{{title}}</a> <span>({{links_total}})</span></li>
+      {{/directory_home_right}}
+    </ul>
+
+
+
+
+
+
+
+  </div>
+  <div class="medium-2 columns sidebar">
+
+    <a href="/directory/edit/new">Post a new directory link</a>
+
+    {{> ads}}
+
+  </div>
+</div>
